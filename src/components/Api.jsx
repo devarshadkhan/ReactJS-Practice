@@ -61,8 +61,10 @@ const Api = () => {
       });
   }, []);
 
-
-
+  /**
+   *
+   * @param {Chooose a one category and uske according data filter } category
+   */
   const handleCategoryChange = (category) => {
     console.log(category);
     if (selectedCategories.includes(category)) {
@@ -72,14 +74,12 @@ const Api = () => {
     }
   };
 
-
-  // filter by products
-
+  /**
+   * All Data Filter By Products
+   */
   const filteredProducts = selectedCategories.length
-  ? data.filter((product) =>
-      selectedCategories.includes(product.category)
-    )
-  : data;
+    ? data.filter((product) => selectedCategories.includes(product.category))
+    : data;
   return (
     <>
       <div className="containerx">
@@ -93,22 +93,21 @@ const Api = () => {
                   </div>
                 ))} */}
                 <div class="form-check d-flex justify-content-between">
-                {Array.from(uniqueCategories).map((category, index) => (
-                  <div key={index} >
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value=""
-                    id={index}
-                    checked={selectedCategories.includes(category)}
-                    onChange={()=>handleCategoryChange(category)}
-                  />
-                  <label class="form-check-label" for={index}>
-                   {category}
-                  </label>
-                  </div>
-                ))}
-                
+                  {Array.from(uniqueCategories).map((category, index) => (
+                    <div key={index}>
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id={index}
+                        checked={selectedCategories.includes(category)}
+                        onChange={() => handleCategoryChange(category)}
+                      />
+                      <label class="form-check-label" for={index}>
+                        {category}
+                      </label>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -122,7 +121,7 @@ const Api = () => {
                         <h5 class="card-title">{item.title}</h5>
                         <p class="card-text">{item.description}</p>
                         <a href="#" class="btn btn-primary">
-                         Add To Cart
+                          Add To Cart
                         </a>
                       </div>
                     </div>
