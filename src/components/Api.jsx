@@ -82,7 +82,7 @@ const Api = () => {
     : data;
   return (
     <>
-      <div className="containerx">
+      <div className="container">
         <div class="container-fluid mt-2">
           <div class="row">
             <div className="col-12">
@@ -92,7 +92,7 @@ const Api = () => {
                     {category}
                   </div>
                 ))} */}
-                <div class="form-check d-flex justify-content-between">
+                <div class="form-check d-flex justify-content-between flex-wrap">
                   {Array.from(uniqueCategories).map((category, index) => (
                     <div key={index}>
                       <input

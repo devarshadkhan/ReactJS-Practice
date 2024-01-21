@@ -5,6 +5,7 @@ import FileB from './components/FileB'
 import MyContext from './context/MyContext'
 import CreditCard from './components/CreditCard'
 import Api from './components/Api'
+import NewFeature from './components/NewFeature'
 function App() {
 const {setText, setColor, color}=useContext(MyContext)
 
@@ -16,12 +17,14 @@ const {setText, setColor, color}=useContext(MyContext)
       <FileA  />
       <FileB /> */}
       {/* <CreditCard /> */}
-      <Api/>
+      {/* <Api/> */}
 
-<h1>Api Call</h1>
+      <NewFeature/>
 
     </>
   )
 }
+
+
 
 export default App
